@@ -31,7 +31,7 @@ def tokenizer(target_text: str):
         target_text = strip_whitespace(target_text)
         temp_result = re.match(Token.STEM, target_text).group()
         target_text = target_text.replace(temp_result, '')
-        yield temp_result
+        yield 'stem', temp_result
     except:
         print("no stem found")
         return "no stem found"
@@ -46,7 +46,7 @@ def tokenizer(target_text: str):
             target_text = target_text.replace(temp_result, '')
             target_text = strip_whitespace(target_text)
 
-            yield temp_result
+            yield 'key', temp_result
 
         except:
             try:
@@ -54,7 +54,7 @@ def tokenizer(target_text: str):
                 target_text = target_text.replace(temp_result, '')
                 target_text = strip_whitespace(target_text)
 
-                yield temp_result
+                yield 'distractor', temp_result
 
             except:
                 print("no option found")
