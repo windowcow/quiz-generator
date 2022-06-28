@@ -5,4 +5,4 @@ from dataclasses import dataclass
 class Token:
     STEM = r'^#.*;'
     KEY = r'^\[\*\].*;'
-    DISTRACTION = r'^\[ \].*;'
+    DISTRACTOR = r'^\[ \].*;'

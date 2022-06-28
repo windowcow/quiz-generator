@@ -1,0 +1,8 @@
+tknizer = tokenizer(sample_text)
+
+generated_tokens = []
+for i in tknizer:
+    generated_tokens.append(i)
+
+
+print(generated_tokens)
