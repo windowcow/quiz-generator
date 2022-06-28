@@ -24,10 +24,23 @@ print(sample_text)
 
 def tokenizer(target_text: str):
     # There should be only one stem
-    group = re.match(Token.STEM, target_text)
+    try:
+        temp_result = re.match(Token.STEM, target_text)
+        target_text = temp_result.replace(temp_result, '')
+        yield temp_result
+    except:
+        return "no stem found"
+    
     while True:
-        # remove whitespace
+        # Removing whitespace
         target_text = strip_whitespace(target_text)
+        
+        # Matching
+        try:
+            re.match(Token.KEY + r'|' + Token.DISTRACTION)
+            
+        except:
+            
 
 
 a = re.match(r'#.*;', sample_text).group()

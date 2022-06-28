@@ -3,6 +3,6 @@ from dataclasses import dataclass
 
 @dataclass
 class Token:
-    STEM = r'#.*;'
-    KEY = r'[\*].*;'
-    DISTRACTOR = r'[ ].*;'
+    STEM = r'^#.*;'
+    KEY = r'^\[\*\].*;'
+    DISTRACTION = r'^\[ \].*;'
