@@ -2,6 +2,7 @@ from dataclasses import dataclass
 import re
 import string
 from tokens import Token
+from question import Question
 
 # load sample file
 sample_file = open("sample-question.txt", 'r')
@@ -83,5 +84,8 @@ generated_tokens = []
 for i in tknizer:
     generated_tokens.append(i)
 
-
 print(generated_tokens)
+
+# make Question instance
+question = Question(generated_tokens)
+print(question.items)
